@@ -1,18 +1,27 @@
 // 2. Write a JavaScript program to find the most frequent item of an array.
 
-// let myArr = prompt("Enter the array: ").split(",");
-// console.log(myArr.toString());
+function frequentFunction() {
+    let myArr = prompt("Enter the array (separated by a comma): ").split(",");
+    console.log(`User input: ${myArr}`);
+    let freq = 1;
+    let item;
+    let counter = 0;
+    function myFrequent() {
+        for(let i=0; i<myArr.length; i++) {
+            for(let j=i; j<myArr.length; j++) {
+                if(myArr[i] == myArr[j]) {
+                    counter++;
+                }
+                if (freq<counter) {
+                    freq=counter;
+                    item = myArr[i];
+                }
+            }
+            counter = 0;
+        }
+        console.log(`Most frequent item: ${item} (${freq} times)`);
+    }
+    myFrequent();
+}
 
-// function myFrequent() {
-//     let counter = 0;
-//     for(let i=0; i<1; i++) {
-//         for(let j=i+1; j<myArr.length; j++) {
-//             if(Number(myArr[i]) == Number(myArr[j])) {
-//                 counter = counter + 1;
-//             }
-
-//         }
-//     }
-//     console.log(counter + 1);
-// }
-// myFrequent();
+//FINISHED!

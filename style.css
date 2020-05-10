@@ -1,0 +1,26 @@
+body {
+    background: bisque;
+    /* text-align: center; */
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.head{
+    text-align: center;
+}
+.question {
+    padding: 10px 50px;
+}
+.question button {
+    background: blue;
+    color: chartreuse;
+}
+.question button:hover {
+    transition: transform;
+    transition-duration: 500ms;
+    transform: scale(1.2);
+    background: lightblue;
+    color: darkgreen;
+}
+.foot {
+    text-align: center;
+}

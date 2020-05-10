@@ -3,24 +3,23 @@
 // and display the message to the screen as odd or even.
 
 
-// let even = "";
-// let odd = "";
-// for(let i=0; i<=15; i++) {
-//     myDelay(i);
-// }
-
-// function myDelay(i) {
-//     setTimeout(function() {
-//         if(i%2 == 0){
-//         even = "Even";
-//         console.log(`${i} - ${even}${`\n`}`);
-//         }
-//         else {
-//             odd = "Odd";
-//             console.log(`${i} - ${odd}${`\n`}`);
-//         }
-//     }, 1000 * i);
-// }
-
-
-//FINISHED!
+function loopFunction() {
+    console.log("Answer for Q5.:");
+    let even = "";
+    let odd = "";
+    for(let i=0; i<=15; i++) {
+        myDelay(i);
+    }
+    function myDelay(i) {
+        setTimeout(function() {
+            if(i%2 == 0){
+            even = "Even";
+            console.log(`${i} - ${even}${`\n`}`);
+            }
+            else {
+                odd = "Odd";
+                console.log(`${i} - ${odd}${`\n`}`);
+            }
+        }, 1000 * i);
+    }
+}

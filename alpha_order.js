@@ -1,14 +1,18 @@
 // 8. Write a JavaScript program using for…in to read the objects from an array entered
 // by an user and to arrange it in alphabetical order.
 
+
+function alphaOrderFunction() {
+console.log("Answer for Q8.: ");
 let forSort = prompt().split(",");
-console.log(`User input: ${forSort}`);
-// forSort.sort();
-// console.log(`Alphabetically arranged output: ${forSort}`);
-let myelem = [];
-let Felem = [];
-for(myelem of forSort) {
-    // console.log(`${myelem}`);
-    Felem += [myelem] + "\n";
+// console.log(forSort);
+console.log("User input: "+forSort);
+let myElem = [];
+let i = 0;
+for(myElem[i] of forSort) {
+    myElem;
+    i++;
 }
-    console.log(`${Felem[0]}`);
+myElem.sort();
+console.log("Alphabetically arranged output: "+myElem);
+}
