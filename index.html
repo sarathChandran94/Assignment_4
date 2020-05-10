@@ -15,50 +15,213 @@
     <div class="mainBody">
         <div class="question">
             <h4>1. Write a JavaScript function to get an array and to read the first element of an array.Check whether it is prime or not.</h4>
+            <p id="que1">
+                <pre>
+                    function primeFunction() {
+                        let numb = prompt("Enter the Numbers (separated by a comma):").split(',');
+                        console.log(`Answer for Q1.${`\n`}Entered array: ${numb.toString()}`);
+                        let fNumb = Number(numb[0]);
+                        console.log(`First number: ${fNumb}`);
+                        function myPrime() {
+                            if(fNumb == 0) {
+                                console.log(`It's neither Prime nor Composite.`);
+                                return false;
+                            }
+                            if(fNumb == 1) {
+                                console.log(`It's neither Prime nor Composite.`);
+                                return false;
+                            }
+                            if(fNumb == 2) {
+                                console.log(`It's a Prime number.`);
+                                return true;
+                            }
+                            else {
+                                for (let x = 2; x < fNumb; x++) {
+                                    if(fNumb % x == 0) {
+                                        console.log(`It's not a Prime number.`);
+                                        return false;
+                                    }
+                                    else {
+                                    console.log(`It's a Prime number.`);
+                                    }
+
+                                }
+
+                                return true;
+                            }
+                        }
+                        myPrime();
+                    }
+                </pre>
+            </p>
             <button class="myBtn" onclick="primeFunction()">Answer</button>in console.
-            <p id="que1"></p>
+
         </div>
         <hr>
         <div class="question">
             <h4>2. Write a JavaScript program to find the most frequent item of an array.</h4>
+            <p id="que2">
+                <pre>
+                    function frequentFunction() {
+                        let myArr = prompt("Enter the array (separated by a comma): ").split(",");
+                        console.log(`User input: ${myArr}`);
+                        let freq = 1;
+                        let item;
+                        let counter = 0;
+                        function myFrequent() {
+                            for(let i=0; i < myArr.length; i++) {
+                                for(let j=i; j < myArr.length; j++) {
+                                    if(myArr[i] == myArr[j]) {
+                                        counter++;
+                                    }
+                                    if (freq < counter) {
+                                        freq=counter;
+                                        item = myArr[i];
+                                    }
+                                }
+                                counter = 0;
+                            }
+                            console.log(`Most frequent item: ${item} (${freq} times)`);
+                        }
+                        myFrequent();
+                    }
+                </pre>
+            </p>
             <button class="myBtn" onclick="frequentFunction()">Answer</button>in console.
-            <p id="que2"></p>
         </div>
         <hr>
         <div class="question">
             <h4>3. Write a JavaScript program which accept a string as input and swap the case of each character. For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.</h4>
+            <p id="que3">
+                <pre>
+                    function caseSwapFunction() {
+                        let myCase = prompt("Enter here: ");
+                        console.log(myCase);
+                        let myCaseOp = "";
+                        for(let a=0; a < myCase.length;a++) {
+                            if(myCase[a] === myCase[a].toUpperCase()) {
+                                myCaseOp += myCase[a].toLowerCase();
+                            }
+                            if(myCase[a] === myCase[a].toLowerCase()) {
+                                myCaseOp += myCase[a].toUpperCase();
+                            }
+                        }
+                        console.log(myCaseOp);
+                    }
+                </pre>
+            </p>
             <button class="myBtn" onclick="caseSwapFunction()">Answer</button>in console.
-            <p id="que3"></p>
+
         </div>
         <hr>
         <div class="question">
             <h4>4. Write a JavaScript program to find the sum of squares of the elements of an array.</h4>
+            <p id="que4">
+                <pre>
+                    function squaresFunction() {
+                        let myArray = [];
+                        let sqArray = [];
+                        let sqSum = 0;
+                        myArray = prompt("Enter the Numbers (separated by commas): ").split(",");
+                        for(let i=0; i < myArray.length;i++) {
+                            sqArray[i] = myArray[i]*myArray[i];
+                            sqSum += sqArray[i];
+                        }
+                        console.log(`Answer for Q.4:${`\n`}Squares of the array '${myArray}' = ${sqArray}${`\n`}The sum of the squares of array '${myArray}' = ${sqSum}`);
+                    }
+                </pre>
+            </p>
             <button class="myBtn" onclick="squaresFunction()">Answer</button>in console.
-            <p id="que4"></p>
+
         </div>
         <hr>
         <div class="question">
             <h4>5. Write a JavaScript for loop that will iterate from 0 to 15. For each iteration, check if the current number is odd or even, and display the message to the screen as odd or even.</h4>
+            <p id="que5">
+                <pre>
+                    function loopFunction() {
+                        console.log("Answer for Q5.:");
+                        let even = "";
+                        let odd = "";
+                        for(let i=0; i<=15; i++) {
+                            myDelay(i);
+                        }
+                        function myDelay(i) {
+                            setTimeout(function() {
+                                if(i%2 == 0){
+                                even = "Even";
+                                console.log(`${i} - ${even}${`\n`}`);
+                                }
+                                else {
+                                    odd = "Odd";
+                                    console.log(`${i} - ${odd}${`\n`}`);
+                                }
+                            }, 1000 * i);
+                        }
+                    }
+                </pre>
+            </p>
             <button class="myBtn" onclick="loopFunction()">Answer</button>in console.
-            <p id="que5"></p>
+
         </div>
         <hr>
         <div class="question">
             <h4>6. Write a JavaScript function to truncate a string if it is longer than the specified number of characters.</h4>
+            <p id="que6">
+                <pre>
+                    function truncateFunction() {
+                        let myInp = prompt("Enter the characters:");
+                        let lim = prompt("Enter the limit(Number): ");
+                        let inpLength = myInp.length;
+                        let newInp = myInp.slice(0,lim);
+                        console.log(`Answer for Q6.${`\n`}Original Input(${inpLength} characters): ${myInp}${`\n`}`);
+                        console.log(`Truncated output (${lim} characters): ${newInp}`)
+                    }
+
+                </pre>
+
+            </p>
             <button class="myBtn" onclick="truncateFunction()">Answer</button>in console.
-            <p id="que6"></p>
         </div>
         <hr>
         <div class="question">
             <h4>7. Write a JavaScript program that accept two integers and display the larger using findLarge() function.</h4>
+            <p id="que7">
+                <pre>
+                    function findLargeFunction() {
+                        let num1 = Number(prompt("Enter the First number:"));
+                        let num2 = Number(prompt("Enter the Second number:"));
+                        function findLarge() {
+                            return Math.max(num1,num2);
+                        }
+                        console.log(`Answer for Q7.${`\n`}The two numbers are: ${num1},${num2}${`\n`}Largest number: ${findLarge()}`);
+                        }
+                </pre>
+            </p>
             <button class="myBtn" onclick="findLargeFunction()">Answer</button>in console.
-            <p id="que7"></p>
         </div>
         <hr>
         <div class="question">
             <h4>8. Write a JavaScript program using for…in to read the objects from an array entered by an user and to arrange it in alphabetical order.</h4>
+            <p id="que8">
+                <pre>
+                    function alphaOrderFunction() {
+                        console.log("Answer for Q8.: ");
+                        let forSort = prompt().split(",");
+                        // console.log(forSort);
+                        console.log("User input: "+forSort);
+                        let myElem = [];
+                        let i = 0;
+                        for(myElem[i] of forSort) {
+                            myElem;
+                            i++;
+                        }
+                        myElem.sort();
+                        console.log("Alphabetically arranged output: "+myElem);
+                        }
+                </pre>
+            </p>
             <button class="myBtn" onclick="alphaOrderFunction()">Answer</button>in console.
-            <p id="que8"></p>
         </div>
         <hr>
         <div class="question">
@@ -69,8 +232,22 @@
 				<br>.<br>
 				<br>.<br>
 				<br>Javascript</h4>
+            <p id="que9">
+                <pre>
+                    function printJavascriptFunction() {
+                        console.log(`Answer for Q9.${`\n`}`)
+                        let x = ["J","A","V","A","S","C","R","I","P","T"];
+                        let jav = "";
+                        for(let i=0; i< x.length; i++) {
+                            for(elem of x[0]){
+                                jav += x[i];
+                                console.log(jav);
+                            }
+                        }
+                    }
+                </pre>
+            </p>
             <button class="myBtn" onclick="printJavascriptFunction()">Answer</button>in console.
-            <p id="que9"></p>
         </div>
         <hr>
         <div class="question">
@@ -79,8 +256,26 @@
 				<br>* *<br>
 				<br>* * *<br>
 				<br>* * * *</h4>
+            <p id="que10">
+                <pre>
+                    function printPattern() {
+                        let n = 4;
+                        let pat = "";
+                        for(let i=0;i< n;i++) {
+                            for(let j=n-1;j< i;j++) {
+                                pat += " ";
+                            }
+                            for(let k=0;k<=i;k++) {
+                                pat += "*";
+                            }
+                            pat += "\n";
+
+                        }
+                        console.log(`Answer for Q.10:${`\n`}${pat}`);
+                    }
+                </pre>
+            </p>
             <button class="myBtn" onclick="printPattern()">Answer</button>in console.
-            <p id="que10"></p>
         </div>
         <hr>
 
