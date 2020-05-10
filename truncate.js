@@ -3,14 +3,9 @@
 
 function truncateFunction() {
     let myInp = prompt("Enter the characters:");
+    let lim = prompt("Enter the limit(Number): ");
     let inpLength = myInp.length;
-    let newInp = myInp.slice(0,10);
+    let newInp = myInp.slice(0,lim);
     console.log(`Answer for Q6.${`\n`}Original Input(${inpLength} characters): ${myInp}${`\n`}`);
-
-    if(inpLength<=10) {
-        console.log(`Input is between the limits: ${newInp}`);
-    }
-    else{
-        console.log(`Truncated Output (10 Characters): ${newInp}`);
-    }
+    console.log(`Truncated output (${lim} characters): ${newInp}`)
 }
